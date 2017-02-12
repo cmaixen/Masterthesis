@@ -61,6 +61,9 @@ The first results display the classification accuracy in function of the amount 
 | 131072       | 0.64975          | 0.0203853501319 |
 
 
+
+
+
 ![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002A_Experiment_with_PCA_and_NN_Classifier.png?raw=true)
 
 In the results we see that there is a stagnation after an amount of 4096 features. Increasing the amounts doesn't contribute to the accuracy.
