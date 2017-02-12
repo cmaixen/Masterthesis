@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "000 Exploring the Data"
-date:   2016-07-11 19:46:31 +0100
+date:   2016-11-07 19:46:31 +0100
 categories: Experiment
 ---
 ## Exploring The Data
