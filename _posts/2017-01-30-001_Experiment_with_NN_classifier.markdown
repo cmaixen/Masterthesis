@@ -7,13 +7,13 @@ date:   2017-01-30 19:46:31 +0100
 categories: Experiment
 ---
 
-# Experimental Setup
+## Experimental Setup
 
-## Problem
+### Problem
 
 The classifcation problem is reduced to the authentication problem, where we need to decide wether the given canvas is from the given user. This has only two answers: Yes or No. 
 
-## Dataset
+### Dataset
 
 We have collected canvases from multiple device from multiple users. We know that small changes in the browser, for example the change in resolution, can allow the user to submit the device twice. For this reason we will only consider one device of each user for in the dataset. 
 
@@ -79,7 +79,7 @@ Report generated on : 2017-01-24 11:47:23
 ```
 
 
-## Validation
+### Validation
 
 We will use 10-fold validation to evaluate the performance of the classifier.
 
@@ -104,7 +104,7 @@ for train_index, test_index in kf.split(x_data):
 ```
         
 
-## Classifier
+### Classifier
 
 We will use the Nearest Neighbour classifier to classify the data
 
@@ -137,7 +137,7 @@ Overall does the random classifier perfom better than random with an average of 
 
 ## Conclusion 
 
-As a conclusion, we can say that the Nearest Neighbor classifier performs better than random and is already a good start towards a solution for the research. Althought we must remember that our database is not a one-on-one reflection of the real world and does not represent all devices in the real world. Also the variation in performance for certain dataset is something to notice. We want a consistent accuracy. Also the representation of of a cansvas can be improved. Currently a canvas is represented by flattened matrix of the RGBA-values, which results in 180k features (size of a canvas is 300 x 150). 180k feautres is to much and has to be reduced. In ![the next experiment]() we will try to this. 
+As a conclusion, we can say that the Nearest Neighbor classifier performs better than random and is already a good start towards a solution for the research. Althought we must remember that our database is not a one-on-one reflection of the real world and does not represent all devices in the real world. Also the variation in performance for certain dataset is something to notice. We want a consistent accuracy. Also the representation of of a cansvas can be improved. Currently a canvas is represented by flattened matrix of the RGBA-values, which results in 180k features (size of a canvas is 300 x 150). 180k feautres is to much and has to be reduced. In [the next experiment](https://cmaixen.github.io/Masterthesis/experiment/2017/02/03/002_Experiment_with_PCA_and_NN_Classifier.html) we will try to this. 
 
 Overall we can say that The Nearest Neighbours Classifier is a good start, but there is much room for improvement.
 
