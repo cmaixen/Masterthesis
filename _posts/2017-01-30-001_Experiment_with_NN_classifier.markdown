@@ -135,7 +135,7 @@ If we repeat the experiment with the the optimal configuration, namely weights="
 
 Overall does the random classifier perfom better than random with an average of 69%. But we see that the data is widly spread.
 
-##Conclusion 
+## Conclusion 
 
 As a conclusion, we can say that the Nearest Neighbor classifier performs better than random and is already a good start towards a solution for the research. Althought we must remember that our database is not a one-on-one reflection of the real world and does not represent all devices in the real world. Also the variation in performance for certain dataset is something to notice. We want a consistent accuracy. Also the representation of of a cansvas can be improved. Currently a canvas is represented by flattened matrix of the RGBA-values, which results in 180k features (size of a canvas is 300 x 150). 180k feautres is to much and has to be reduced. In ![the next experiment]() we will try to this. 
 
