@@ -123,15 +123,54 @@ The Nearest Neighbour classifier has different options for the weight:
 
 First we try to optimise the configuration for K and the weights.
 
+| n_neighbours | Average Accuracy | Std             | Weights  |
+|--------------|------------------|-----------------|----------|
+| 2            | 0.556            | 0.0222822799552 | uniform  |
+| 2            | 0.59375          | 0.0267920230666 | distance |
+| 4            | 0.5825           | 0.0204633819297 | uniform  |
+| 4            | 0.6125           | 0.0170660481659 | distance |
+| 5            | 0.6185           | 0.0133790881603 | uniform  |
+| 5            | 0.62175          | 0.0272729261356 | distance |
+| 10           | 0.58675          | 0.0219673052512 | uniform  |
+| 10           | 0.625            | 0.0249499498997 | distance |
+| 12           | 0.57975          | 0.0173727516531 | uniform  |
+| 12           | 0.6145           | 0.0303685692781 | distance |
+| 15           | 0.6025           | 0.0141862609591 | uniform  |
+| 15           | 0.609            | 0.0219146070008 | distance |
+| 30           | 0.58075          | 0.0291129266821 | uniform  |
+| 30           | 0.609            | 0.0235637433359 | distance |
+
+
+
 ![001A_Experiment_with_NN_classifier_all](https://raw.githubusercontent.com/cmaixen/Masterthesis/master/_images/001A_Experiment_with_NN_classifier_all.png)
 
 Overall dominates 'distance' the configuration. For this configuration seems K=10 the optimal configuration. 
 
 If we repeat the experiment with the the optimal configuration, namely weights="distance" and K=10, on 15 random composed datasets, we get the following results:
 
+| Run | Average Accuracy | Std              |
+|-----|------------------|------------------|
+| 1   | 0.72825          | 0.0212735163995  |
+| 2   | 0.54175          | 0.026670442441   |
+| 3   | 0.74375          | 0.0208940781084  |
+| 4   | 0.650337249782   | 0.031165912499   |
+| 5   | 0.73525          | 0.0199515037027  |
+| 6   | 0.5385           | 0.0266505159425  |
+| 7   | 0.73825          | 0.0221091044595  |
+| 8   | 0.641            | 0.0219715725427  |
+| 9   | 0.71125          | 0.0120026038842  |
+| 10  | 0.65375          | 0.0170018381359  |
+| 11  | 0.58325          | 0.0230502169187  |
+| 12  | 0.6495           | 0.0219317121995  |
+| 13  | 0.956475279107   | 0.00842988336461 |
+| 14  | 0.6485           | 0.027527259217   |
+| 15  | 0.80775          | 0.0189225394702  |
+
 ![001B_Experiment_with_NN_classifier_barchart](https://github.com/cmaixen/Masterthesis/blob/master/_images/001B_Experiment_with_NN_classifier_barchart.png?raw=true)
 
 ![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/001B_Experiment_with_NN_classifier_boxplot.png?raw=true)
+
+
 
 Overall does the random classifier perfom better than random with an average of 69%. But we see that the data is widly spread.
 
