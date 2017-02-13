@@ -89,12 +89,18 @@ If we repeat the experiment on 15 random generated datasets with the optimal con
 | 13  | 0.7205           | 0.0230976189249  |
 | 14  | 0.66575          | 0.0191066088043  |
 
-![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002A_Experiment_with_PCA_and_NN_Classifier.png?raw=true)
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002C_Experiment_with_PCA_and_NN_Classifier_barchart.png?raw=true)
 
-![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002A_Experiment_with_PCA_and_NN_Classifier.png?raw=true)
+#### BOXPLOT NN Classifier WITH PCA
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002C_Experiment_with_PCA_and_NN_Classifier_boxplot.png?raw=true)
+
+#### BOXPLOT NN Classifier WITHOUT PCA (from [experiment 001]((https://cmaixen.github.io/Masterthesis/experiment/2017/01/30/001_Experiment_with_NN_classifier.html))
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/001B_Experiment_with_NN_classifier_boxplot.png?raw=true)
+
 
 First of all is it interesting to see that we have for certain datasets an extremly high precision. It is interessting to take a closer look to that in further research.
-Our average acuracy has slightly increased with 1% compared to the results without PCA. Not the big improvement we hoped for. Also do we see there are still 
-
+Our average acuracy has slightly increased with 1% compared to the results without PCA. Not the big improvement we hoped for. Also if we compare the boxplots of this experiment and the previous experiment, we see that the interquartile for "With PCA"  is bigger. Meaning that the consistence accuracy over the dataset is less than "Without PCA". 
 
 ## Conclusion
+
+PCA results in a very small improvement sand shows not the improvements we hoped for. At last do we see also a wider spreading of the accuracy. A consistence accuracy is also something we like to work to and PCA does not fulfill this requirement.
