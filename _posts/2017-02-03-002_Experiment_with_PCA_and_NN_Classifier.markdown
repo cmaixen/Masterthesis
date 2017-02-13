@@ -68,5 +68,33 @@ The first results display the classification accuracy in function of the amount 
 
 In the results we see that there is a stagnation after an amount of 4096 features. Increasing the amounts doesn't contribute to the accuracy.
 
+If we repeat the experiment on 15 random generated datasets with the optimal configuration with the least optimal solution. We get the following results:
+
+
+| Run | Average Accuracy | Std              |
+|-----|------------------|------------------|
+| 0   | 0.6645           | 0.0285438259524  |
+| 1   | 0.6655           | 0.013955285737   |
+| 2   | 0.65725          | 0.0219786828541  |
+| 3   | 0.826            | 0.0192093727123  |
+| 4   | 0.5345           | 0.0328024389337  |
+| 5   | 0.629            | 0.0168151717208  |
+| 6   | 0.995024875622   | 0.00385371477235 |
+| 7   | 0.956479835954   | 0.0182139117714  |
+| 8   | 0.7355           | 0.0114455231423  |
+| 9   | 0.644759701633   | 0.0217405314397  |
+| 10  | 0.5785           | 0.0211896201004  |
+| 11  | 0.53425          | 0.0253734605444  |
+| 12  | 0.6235           | 0.0235902522242  |
+| 13  | 0.7205           | 0.0230976189249  |
+| 14  | 0.66575          | 0.0191066088043  |
+
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002A_Experiment_with_PCA_and_NN_Classifier.png?raw=true)
+
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002A_Experiment_with_PCA_and_NN_Classifier.png?raw=true)
+
+First of all is it interesting to see that we have for certain datasets an extremly high precision. It is interessting to take a closer look to that in further research.
+Our average acuracy has slightly increased with 1% compared to the results without PCA. Not the big improvement we hoped for. Also do we see there are still 
+
 
 ## Conclusion
