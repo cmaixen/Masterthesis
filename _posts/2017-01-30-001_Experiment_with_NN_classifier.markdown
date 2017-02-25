@@ -182,7 +182,62 @@ Overall we can say that The Nearest Neighbours Classifier is a good start, but t
 
 
 
+##UPDATE(25/02): BUG Found 
 
+An explanation is found for the extreme outlier at run #13 in the experiment with 15 random generated datasets.
+
+We found a bug in the generation of the dataset. In the selectionproces of the device to label with yes went sometimes wrong because of a wrong comparison.
+
+```python
+      if len(selected_canvases) <= 2000:
+            print(len(selected_canvases))
+            full_set = True
+
+```
+
+This resulted in a unbalanced train/testset. Sometimes we had the selection of an incomplete set (set with less than 2000 samples) and a incomplete amount of 'Yes'-samples. By checking the logs of the experiment our finding gets confirmed.
+
+| Run | Size Yes-labels | Size No-labels | Size X_data | Size Y_data |
+|-----|-----------------|----------------|-------------|-------------|
+| 1   | 2000            | 2000           | 4000        | 4000        |
+| 2   | 2000            | 2000           | 4000        | 4000        |
+| 3   | 2000            | 2000           | 4000        | 4000        |
+| **4**   | **1835**            | **2000**           | **3835**        | **3835**         |
+| 5   | 2000            | 2000           | 4000        | 4000                |
+| 6   | 2000            | 2000           | 4000        | 4000        |
+| 7   | 2000              | 2000           | 4000        | 4000        |
+| 8   | 2000            | 2000           | 4000        | 4000        |
+| 9   | 2000            | 2000           | 4000        | 4000        |
+| 10   | 2000            | 2000           | 4000        | 4000        |
+| 11  | 2000            | 2000           | 4000        | 4000        |
+| 12  | 2000            | 2000           | 4000        | 4000        |
+| 13  | 2000            | 2000           | 4000        | 4000        |
+| **14**  | **91**              | **2000**           | **2091**        | 2091        |
+| 15  | 2000            | 2000           | 4000        | 4000        |
+
+We need to check the amount of devices with exactly 2000 canvas samples to know the influence on the research.
+
+If we check our database, we see that the algorithm with the bug had still 70 devices to choose from. Also we see that there are no devices which  have more than 2000 canvas samples.
+
+
+| # Samples | # Devices |
+|-----------|-----------|
+| < 2000    | 10        |
+| 2000      | 70        |
+| > 2000    | 0         |
+ 
+ 
+As a conclusion about the impact we can say that the bug did not exclude devices, but only included to much devices. The new results can be calculated by removing the results with an unbalanced dataset. We do not need to redo the experiment to get valid results.
+
+## New Results
+
+By removing the incorrect results, we have still 13 runs left.
+
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/001B_Experiment_with_NN_classifier_boxplot_bug_fixed.png?raw=true)
+
+As expected is the average lower and is our conclusion still valid, we cannot achieve a consistant accuracy with PCA and we need to search for other solutions.
+ 
+ 
 
 
 

@@ -104,3 +104,62 @@ Our average acuracy has slightly increased with 1% compared to the results witho
 ## Conclusion
 
 PCA results in a very small improvement sand shows not the improvements we hoped for. At last do we see also a wider spreading of the accuracy. A consistence accuracy is also something we like to work to and PCA does not fulfill this requirement.
+
+##UPDATE(25/02): BUG Found 
+
+An explanation is found for the extreme outliers at run #6 and #7 and possible #9 in the experiment with 15 random generated datasets.
+
+We found a bug in the generation of the dataset. In the selectionproces of the device to label with yes went sometimes wrong because of a wrong comparison.
+
+```python
+      if len(selected_canvases) <= 2000:
+            print(len(selected_canvases))
+            full_set = True
+
+```
+
+This resulted in a unbalanced train/testset. Sometimes we had the selection of an incomplete set (set with less than 2000 samples) and a incomplete amount of 'Yes'-samples. By checking the logs of the experiment our finding gets confirmed.
+
+| Run | Size Yes-labels | Size No-labels | Size X_data | Size Y_data |
+|-----|-----------------|----------------|-------------|-------------|
+| 0   | 2000            | 2000           | 4000        | 4000        |
+| 1   | 2000            | 2000           | 4000        | 4000        |
+| 2   | 2000            | 2000           | 4000        | 4000        |
+| 3   | 2000            | 2000           | 4000        | 4000        |
+| 4   | 2000            | 2000           | 4000        | 4000        |
+| 5   | 2000            | 2000           | 4000        | 4000        |
+| **6**   | **10**              | **2000**           | **2010**        | **2010**        |
+| **7**   | **91**              | **2000**           | **2091**        | **2091**        |
+| 8   | 2000            | 2000           | 4000        | 4000        |
+| **9**   | **1561**            | **2000**           | **3561**        | **3561**        |
+| 10  | 2000            | 2000           | 4000        | 4000        |
+| 11  | 2000            | 2000           | 4000        | 4000        |
+| 12  | 2000            | 2000           | 4000        | 4000        |
+| 13  | 2000            | 2000           | 4000        | 4000        |
+| 14  | 2000            | 2000           | 4000        | 4000        |
+
+
+
+We need to check the amount of devices with exactly 2000 canvas samples to know the influence on the research.
+
+If we check our database, we see that the algorithm with the bug had still 70 devices to choose from. Also we see that there are no devices which  have more than 2000 canvas samples.
+
+
+| # Samples | # Devices |
+|-----------|-----------|
+| < 2000    | 10        |
+| 2000      | 70        |
+| > 2000    | 0         |
+ 
+ 
+As a conclusion about the impact we can say that the bug did not exclude devices, but only included to much devices. The new results can be calculated by removing the results with an unbalanced dataset. We do not need to redo the experiment to get valid results.
+
+## New Results
+
+By removing the incorrect results, we have still 13 runs left.
+
+![001B_Experiment_with_NN_classifier_boxplot](https://github.com/cmaixen/Masterthesis/blob/master/_images/002C_Experiment_with_PCA_and_NN_Classifier_boxplot_bug_fixed.png?raw=true)
+
+As expected is the average lower and is our conclusion still valid, we cannot achieve a consistant accuracy with PCA and we need to search for other solutions.
+ 
+ 
