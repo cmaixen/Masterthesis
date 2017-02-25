@@ -105,7 +105,7 @@ Our average acuracy has slightly increased with 1% compared to the results witho
 
 PCA results in a very small improvement sand shows not the improvements we hoped for. At last do we see also a wider spreading of the accuracy. A consistence accuracy is also something we like to work to and PCA does not fulfill this requirement.
 
-##UPDATE(25/02): BUG Found 
+## UPDATE(25/02): BUG Found 
 
 An explanation is found for the extreme outliers at run #6 and #7 and possible #9 in the experiment with 15 random generated datasets.
 
