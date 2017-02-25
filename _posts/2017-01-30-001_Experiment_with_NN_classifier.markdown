@@ -182,7 +182,7 @@ Overall we can say that The Nearest Neighbours Classifier is a good start, but t
 
 
 
-##UPDATE(25/02): BUG Found 
+## UPDATE(25/02): BUG Found 
 
 An explanation is found for the extreme outlier at run #13 in the experiment with 15 random generated datasets.
 
