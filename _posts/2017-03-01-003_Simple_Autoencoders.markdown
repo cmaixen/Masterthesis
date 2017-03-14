@@ -113,9 +113,9 @@ These are really bad results. It performance less or equal as a random classifie
 
 If we look at our plots of the loss and value-loss for the different folds over the amount of steps (screenshots from tensorboard), we see for every fold a constant and no improvemnt over the amount of steps. 
 
-![Loss](../_images/003_simple_autoencoder_loss_function.png)
+![Loss](https://github.com/cmaixen/Masterthesis/blob/master/_images/003_simple_autoencoder_loss_function.png)
 
-![Value Loss](../_images/003_simple_autoencoder_valueloss_function.png)
+![Value Loss](https://github.com/cmaixen/Masterthesis/blob/master/_images/003_simple_autoencoder_valueloss_function.png)
 
 After analysing the results and reviewing our experimental setup, there are several reason which could explain the bad results.
 
@@ -127,7 +127,7 @@ After analysing the results and reviewing our experimental setup, there are seve
 
 The following sketch illustrates the idea of the "**identifying noise**"
 
-![Identifying noise](../_images/003_simple_autoencoder_sketch.png)
+![Identifying noise](https://github.com/cmaixen/Masterthesis/blob/master/_images/003_simple_autoencoder_sketch.png)
 
 ## Conclusion
 
