@@ -74,21 +74,21 @@ At the beginning we overestimated the power of the neural network and the availa
 
 The naive implementation looked as the following:  
 
-	```python
-	input_img = Input(shape=(180000,))
-	# "encoded" is the encoded representation of the input
-	encoded = Dense(encoding_dim, activation='relu')(input_img)
-	# "decoded" is the lossy reconstruction of the input
-	decoded = Dense(180000, activation='sigmoid')(encoded)
-	```
+```python
+input_img = Input(shape=(180000,))
+# "encoded" is the encoded representation of the input
+encoded = Dense(encoding_dim, activation='relu')(input_img)
+# "decoded" is the lossy reconstruction of the input
+decoded = Dense(180000, activation='sigmoid')(encoded)
+```
 
 To reduce the amount of nodes, we applied Maxpooling with a 6x6 filter on the horizontal and vertical axis. The border_mode was set to "same", which means that you get as output the same size as the input. 
 
-	```python
-	input_img = Input(shape=(300,150,4))
-	encoded = MaxPooling2D((6, 6), border_mode='same')(input_img)
-	decoded = UpSampling2D((6, 6))(encoded)
-	```
+```python
+input_img = Input(shape=(300,150,4))
+encoded = MaxPooling2D((6, 6), border_mode='same')(input_img)
+decoded = UpSampling2D((6, 6))(encoded)
+```
 The following table gives the accuracy achieved by the classifier with the features of the autoencoder.
 
 
