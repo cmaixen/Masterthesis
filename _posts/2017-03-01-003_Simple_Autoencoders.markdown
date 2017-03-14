@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "003 Experiment wih Simple Autoencoders"
-date:   2017-02-03 19:46:31 +0100
+date:   2017-03-03 19:46:31 +0100
 
 
 categories: Experiment
